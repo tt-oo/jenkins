@@ -17,7 +17,8 @@ COPY licenseCompleter.groovy /jenkins/src/licenseCompleter.groovy
 COPY show-pom-version.rb /jenkins/src/show-pom-version.rb
 
 WORKDIR /jenkins/src/
-RUN mvn clean install --batch-mode 
+#RUN mvn clean install --batch-mode
+COPY licenseCompleter.groovy /jenkins/src/war/target/jenkins.war
 
 # The image is based on the previous weekly, new changes in jenkinci/docker are not applied
 FROM jenkins/jenkins:latest
